@@ -1,0 +1,40 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 10px;
+    background: -webkit-linear-gradient(#B993D6, #8CA6DB);
+    background: linear-gradient(90deg, #B993D6, #8CA6DB);
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+    margin-bottom: 20px;
+}
+
+.userStatus {
+    display: flex;
+    list-style: none;
+}
+
+.userStatus a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.userLogin a { 
+    margin-right: 10px;
+    color: white;
+
+    & :visited {
+        color: inherit
+    }
+}
+
+.userSignup a {
+    margin-left: 10px;
+    color: rgb(196, 64, 196);
+
+    & :visited {
+        color: inherit
+    }
+}

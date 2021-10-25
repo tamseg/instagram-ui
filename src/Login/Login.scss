@@ -1,0 +1,35 @@
+@import "../Register/Register.scss";
+
+.forgotPassword {
+    text-align: center;
+    font-size: 15px;
+    color: rgb(36, 34, 34);
+    margin-bottom: 15px;
+}
+
+.forgotPassword a {
+    text-decoration: none;
+    padding: 0 2px 0 2px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    color: inherit;
+
+    &::after {
+        content:" ";
+        width: 100%;
+        position: absolute;
+        height:2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(196, 64, 196);
+         transform: scaleX(0);
+         transform-origin: bottom right;
+         transition: transform 0.3s;
+    }
+
+    &:hover::after {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+    }
+}
