@@ -7,6 +7,9 @@ import Feed from './Feed/Feed';
 import Header from './Header/Header';
 import { me } from './services/user.service';
 import PostCreate from './PostCreate/PostCreate';
+import Search from './Search/Search';
+import Profile from './Profile/Profile'
+import PostPage from './PostPage/PostPage';
 
 export const UserContext = createContext();
 
@@ -19,7 +22,7 @@ function App() {
       me()
         .then(loggedUser => {
           if (!isLoggedIn(loggedUser)) {
-            // history.push('/login');
+            history.push('/login');
             return;
           }
           setUser(loggedUser);
@@ -32,11 +35,13 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value = {{user, setUser}}>
+    <UserContext.Provider value = {{ user, setUser }}>
       <div className="App">
-        {/* { isLoggedIn(user) && <Header /> } */}
-        <Header />
+        { isLoggedIn(user) && <Header /> }
         <Switch>
+        <Route path="/profile/:username">
+          <Profile />
+        </Route>
         <Route exact path='/'>
             <Feed />
           </Route>
@@ -48,6 +53,12 @@ function App() {
           </Route> 
           <Route path="/post/create">
             <PostCreate />
+          </Route>
+          <Route path="/post/:id">
+            <PostPage />
+          </Route>
+          <Route path="/search">
+            <Search />
           </Route>
         </Switch>
       </div>

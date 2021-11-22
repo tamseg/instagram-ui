@@ -1,0 +1,34 @@
+.likes_count {
+    padding-top: 10px;
+}
+
+.heart_like {
+    color: grey;
+    animation-name: paintGrey;
+    animation-duration: 0.5s;
+}
+
+.heart_unlike {
+    color: crimson;
+    animation-name: paintRed;
+    animation-duration: 0.5s;
+}
+
+.like_btn {
+    background: transparent;
+    border: none;
+}
+
+.post_like {
+    padding-top: 10px;
+}
+
+@keyframes paintRed {
+    0% {color: grey;}
+    100% {color: crimson;} 
+}
+
+@keyframes paintGrey {
+    0% {color: crimson;}
+    100% {color: grey;}
+}

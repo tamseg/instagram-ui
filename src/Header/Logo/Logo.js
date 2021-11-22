@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Logo.scss';
 
 function Logo() {
     return (
         <div className="Logo">
-            Instagram
+            <Link to={'/'}>
+                Instagram
+            </Link>
         </div>
     );
 };

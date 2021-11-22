@@ -1,0 +1,58 @@
+// .profile {
+
+//     h2 {
+//         text-align: center;
+//     }
+    
+//     &_header {
+//         display: flex;
+//         justify-content: center;
+//     }
+
+//     &_avatar {
+//         margin-right: 30px;
+//     }
+
+//     &_posts {
+//         display: flex;
+//         gap: 20px;
+//         padding: 20px;
+//         justify-content: center;
+//         &.Post_wrapper {
+//             // max-width: 300px;
+//             flex: 0.5;
+//             // @media screen and (min-width: 768px) {
+//             //     flex: 0.3;
+//             // }
+//         }
+//         &.Post {
+//             height: 300px;
+//         }
+//     }
+// }
+
+.profile {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    &_posts {
+        gap: 20px;
+        padding: 20px;
+    }
+    &_avatar {
+        margin-right: 30px;
+    }
+    &_header {
+        display: flex;
+        justify-content: center;
+    }
+    &.Post {
+        height: 300px;
+    }
+}
+
+h2 {
+    text-align: center;
+}

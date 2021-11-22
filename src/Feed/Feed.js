@@ -20,8 +20,10 @@ function Feed() {
     }, [])
 
     return (
-        <div>
-            {posts.map((post) => <Post data={post} />)}
+        <div className="feed">
+            <div className="feed_wrapper">
+				{posts.map((post) => <Post data={post} key={post._id} />)}
+			</div>
         </div>
     );
 };

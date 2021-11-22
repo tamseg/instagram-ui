@@ -9,7 +9,7 @@ async function create(post) {
         method: 'POST',
         body: form,
         headers: {
-            Authorization: token
+            'Authorization': token
         }
     });
     return res.json();
@@ -20,4 +20,67 @@ async function getFeed() {
     return res.json();
 }
 
-export { create, getFeed }
+async function getPosts(username) {
+    const token = localStorage.getItem('token');
+    if (!token) return [];
+    const res = await fetch(config.apiUrl + '/user/' + username + '/post', {
+        method: 'GET',
+        headers: {
+            'Authorization': token
+        }
+    });
+    return res.json();
+}
+
+function postLike(postId) {
+    return fetch(config.apiUrl + '/post/' + postId + '/like', {
+        method: 'POST',
+        headers: {
+            'Authorization': localStorage.getItem('token')
+        }
+    });
+}
+
+function postUnlike(postId) {
+    return fetch(config.apiUrl + '/post/' + postId + '/unlike', {
+        method: 'POST',
+        headers: {
+            'Authorization': localStorage.getItem('token')
+        }
+    });
+}
+
+async function getOnePost(postId) {
+    const res = await fetch(config.apiUrl + '/post/' + postId, {
+        headers: {
+            'Authorization': localStorage.getItem('token')
+        }
+    });
+    return res.json();
+}
+
+async function getComments(postId) {
+    const res = await fetch(config.apiUrl + '/post/' + postId + '/comment', {
+        method: 'GET',
+        headers: {
+            'Authorization': localStorage.getItem('token')
+        }
+    });
+    return res.json();
+}
+
+async function createComment(postId, content) {
+    const res = await fetch(config.apiUrl + '/post/' + postId + '/comment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('token')
+        },
+        body: JSON.stringify({
+            content
+        })
+    });
+    return res.json();
+}
+
+export { create, getFeed, getPosts, postLike, postUnlike, getOnePost, getComments, createComment }

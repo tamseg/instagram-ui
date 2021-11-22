@@ -51,6 +51,9 @@ function Register() {
                     <div className="buttonWrapper">
                         <button type="submit" className="button">Create account</button>
                     </div>
+                    <div className="already_registered">
+                        Already have an account? <a href='/login'>Sign in</a>
+                    </div>
                 </Form>
             </Formik>
         </div>

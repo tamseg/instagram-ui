@@ -13,7 +13,7 @@
     }
     border: 1px solid #F1F1F1;
     margin: 15px 0;
-    border-radius: 3px;
+    border-radius: 14px;
     overflow: hidden;
     header {
         display: flex;
@@ -21,13 +21,13 @@
         align-items: center;
         padding: 10px;
         background: #F9F9F9;
-        .Post__date {
+        .Post_date {
             color: #888888;
             font-size: 12px;
             text-decoration: none;
         }
     }
-    .Post__image {
+    .Post_image {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -44,7 +44,7 @@
             transition: all 0.2s ease-in-out;
         }
     }
-    .Post__user {
+    .Post_user {
         display: flex;
         align-items: center;
         a {
@@ -54,14 +54,14 @@
                 color: #F54555;
             }
         }
-        &__username {
+        &_username {
             margin-left: 5px;
         }
     }
-    .Post__content {
+    .Post_content {
         padding: 0 15px;
         margin-top: 15px;
-        .Post__description {
+        .Post_description {
             color: #444444;
             font-size: 14px;
             line-height: 1.5em;
@@ -69,7 +69,7 @@
     }
     &:hover {
         border-color: #DDDDDD;
-        .Post__image {
+        .Post_image {
             img {
                 transform: scale(1.1);
             }
